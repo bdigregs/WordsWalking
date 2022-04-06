@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Words_Walking.Repositories;
 
 namespace Words_Walking
 {
@@ -26,6 +27,8 @@ namespace Words_Walking
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IBookRepository, BookRepository>();
+            
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -37,11 +40,19 @@ namespace Words_Walking
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment()) 
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Words_Walking v1"));
+                
+                // Do not block requests while in development
+                app.UseCors(options =>
+                {
+                    options.AllowAnyOrigin();
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                });
             }
 
             app.UseHttpsRedirection();

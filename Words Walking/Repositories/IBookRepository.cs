@@ -1,6 +1,18 @@
-﻿namespace Words_Walking.Repositories
+﻿using System.Collections.Generic;
+using Words_Walking.Models;
+
+namespace Words_Walking.Repositories
 {
-    public class Class
+    public interface IBookRepository
     {
+        List<Book> GetAllBooks();
+
+        public void AddBook(Book book);
+
+        public void DeleteBook(int id);
+
+        public void EditBook(Book book);
+
+        Book GetById(int id);
     }
 }
