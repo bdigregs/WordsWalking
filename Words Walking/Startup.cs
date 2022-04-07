@@ -28,6 +28,8 @@ namespace Words_Walking
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IBookRepository, BookRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IGenreRepository, GenreRepository>();
             
 
             services.AddControllers();

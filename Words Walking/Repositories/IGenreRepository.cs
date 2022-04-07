@@ -3,10 +3,9 @@ using Words_Walking.Models;
 
 namespace Words_Walking.Repositories
 {
-    public interface IUserRepository
+    public interface IGenreRepository
     {
-        User GetByEmail(string email);
-
-        public void Add(User user);
+        List<Genre> GetAll();
+        public void Delete(int id);
     }
 }
