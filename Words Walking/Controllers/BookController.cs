@@ -57,6 +57,22 @@ namespace Words_Walking.Controllers
                 return NoContent();
         }
 
+        [HttpPatchAttribute("{id}")]
+        public IActionResult Patch(int id, Book book)
+        {
+            if (id != book.Id)
+            {
+                return BadRequest();
+            }
+
+            _bookRepository.SellBook(book);
+            return NoContent();
+        }
+
+
+
+
+
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

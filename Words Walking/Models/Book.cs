@@ -9,10 +9,12 @@ namespace Words_Walking.Models
         public int Id { get; set; }
 
         public int genreId { get; set; }
+        public Genre genre { get; set; }
 
         public int? buyerId { get; set; }
 
         public int sellerId { get; set; }
+        public User user { get; set; }
 
 
         [Required] 

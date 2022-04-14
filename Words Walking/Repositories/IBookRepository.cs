@@ -13,6 +13,8 @@ namespace Words_Walking.Repositories
 
         public void EditBook(Book book);
 
+        public void SellBook(Book book);
+
         Book GetById(int id);
     }
 }

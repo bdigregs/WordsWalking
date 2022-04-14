@@ -68,15 +68,14 @@ namespace Words_Walking.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                              INSERT INTO Book (genreId, buyerId, sellerId, title, 
+                              INSERT INTO Book (genreId, sellerId, title, 
                                         author, synopsis, publisher, publishDate, firstEdition, 
                                         price, imageUrl)
                              OUTPUT INSERTED.ID
-                                VALUES (@genreId, @buyerId, @sellerId, @title, @author, @synopsis, 
+                                VALUES (@genreId, @sellerId, @title, @author, @synopsis, 
                                 @publisher, @publishDate, @firstEdition, @price, @imageUrl)";
 
                     DbUtils.AddParameter(cmd, "@genreId", book.genreId);
-                    DbUtils.AddParameter(cmd, "@buyerId", book.buyerId);
                     DbUtils.AddParameter(cmd, "@sellerId", book.sellerId);
                     DbUtils.AddParameter(cmd, "@title", book.title);
                     DbUtils.AddParameter(cmd, "@author", book.author);
@@ -196,5 +195,25 @@ namespace Words_Walking.Repositories
             }
         }
 
+
+        public void SellBook(Book book)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                            UPDATE Book
+                              SET buyerId = @buyerId
+                            WHERE Id = @id";
+
+                    DbUtils.AddParameter(cmd, "@buyerId", book.buyerId);
+                    DbUtils.AddParameter(cmd, "@id", book.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
