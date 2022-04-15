@@ -58,14 +58,10 @@ namespace Words_Walking.Controllers
         }
 
         [HttpPatchAttribute("{id}")]
-        public IActionResult Patch(int id, Book book)
+        public IActionResult Patch(int id, int userId)
         {
-            if (id != book.Id)
-            {
-                return BadRequest();
-            }
-
-            _bookRepository.SellBook(book);
+           
+            _bookRepository.SellBook(id, userId);
             return NoContent();
         }
 

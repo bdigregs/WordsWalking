@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { BookCard } from "./components/book/BookCard";
 
 
-export default function Home() {
+export default function MyAccount() {
 
   const navigate = useNavigate();
   const {getAllBooks, books} = useContext(BookContext)
@@ -24,19 +24,17 @@ books.sellerId = parseInt(userId)
 
   return (
       <>
-    {/* <button onClick={() => {navigate("/book/add")}}>Add Book</button>   */}
+    <button onClick={() => {navigate("/book/add")}}>Add Book</button>  
 
-    <span style={{
+    {/* <span style={{
       position: "fixed",
       left: 0,
       right: 0,
       top: "50%",
       marginTop: "-0.5rem",
       textAlign: "center",
-    }}>Welcome to Words Walking, {user.firstName}</span>
+    }}>Welcome to Words Walking</span> */}
 
-<a href="https://lh3.googleusercontent.com/MXl10sp3zfFJh3pTSriyo26v-Cm6Cye9VzhzSXewlnodLs_uw57nUj4hJIRUX85fjxHLJi0nDMQxdU5j5_MV-BO8m_sDQgCPk7lTAp-3PxI3S8Iw01ubLGVf6wIbFnSA_OwZbwZWCw=w2400?source=screenshot.guru"> <img className="logo" src="https://lh3.googleusercontent.com/MXl10sp3zfFJh3pTSriyo26v-Cm6Cye9VzhzSXewlnodLs_uw57nUj4hJIRUX85fjxHLJi0nDMQxdU5j5_MV-BO8m_sDQgCPk7lTAp-3PxI3S8Iw01ubLGVf6wIbFnSA_OwZbwZWCw=w500-h315-p-k" /> </a>
-{/* 
     <img src="https://www.canva.com/design/DAE9UmQG_UE/view" alt="WordsWalking" />
 
 <h1> View all of your listings</h1>
@@ -62,7 +60,7 @@ books.sellerId = parseInt(userId)
         {books.filter(b => b.buyerId === userId).map((singleBookInLoop) => (
           <BookCard key={singleBookInLoop.id} book={singleBookInLoop} />
         ))}
-      </div> */}
+      </div>
 
 
 </>

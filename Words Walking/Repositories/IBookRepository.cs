@@ -13,7 +13,7 @@ namespace Words_Walking.Repositories
 
         public void EditBook(Book book);
 
-        public void SellBook(Book book);
+        public void SellBook(int id, int userId);
 
         Book GetById(int id);
     }

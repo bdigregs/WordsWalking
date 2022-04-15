@@ -196,7 +196,7 @@ namespace Words_Walking.Repositories
         }
 
 
-        public void SellBook(Book book)
+        public void SellBook(int id, int userId)
         {
             using (var conn = Connection)
             {
@@ -208,8 +208,8 @@ namespace Words_Walking.Repositories
                               SET buyerId = @buyerId
                             WHERE Id = @id";
 
-                    DbUtils.AddParameter(cmd, "@buyerId", book.buyerId);
-                    DbUtils.AddParameter(cmd, "@id", book.Id);
+                    DbUtils.AddParameter(cmd, "@buyerId", userId);
+                    DbUtils.AddParameter(cmd, "@id", id);
 
                     cmd.ExecuteNonQuery();
                 }

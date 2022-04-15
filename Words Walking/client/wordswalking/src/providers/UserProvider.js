@@ -19,7 +19,6 @@ export const UserProvider = (props) => {
     fetch(`https://localhost:44381/api/User?email=${userObject.email}`)
       .then((r) => r.json())
       .then((userObjFromDB) => {
-
         localStorage.setItem("wordsWalkingUser", JSON.stringify(userObjFromDB));
         setIsLoggedIn(true);
       }).then(navigate("/"))

@@ -46,12 +46,10 @@ export const BookForm = () => {
     const handleClickSaveBook = (event) => {
         event.preventDefault()
    
-
         if (book.genreId === 0 || book.title === "" || book.author === "" || book.price === 0 ) {
             window.alert("Please select a genre, title, and author. And don't forget to set a price!")
         }
-        else {
-         
+        else {  
             //Get user Id from local storage
             const user = JSON.parse(localStorage.getItem("wordsWalkingUser"))
             console.log(user)
