@@ -8,6 +8,7 @@ import { BookForm } from "./book/BookForm";
 import { BookList } from "./book/BookList";
 import { GenreProvider } from "../providers/GenreProvider";
 import MyAccount from "../MyAccount";
+import { BookSearch } from "./book/BookSearch";
 
 
 export default function ApplicationViews() {
@@ -35,6 +36,7 @@ export default function ApplicationViews() {
         <Route path="myaccount" element={<MyAccount />} />
         <Route path="/register" element={<Register />} />
         <Route path="/book/edit/:bookId/*" element={<BookForm />} />
+        <Route path="books/*" element={<><BookSearch /><BookList/></>} />
 
 
 

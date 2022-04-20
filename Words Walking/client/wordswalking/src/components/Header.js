@@ -15,6 +15,12 @@ const Header = () => {
 
     let navigate = useNavigate();
 
+    // const logout = () => {
+    //   sessionStorage.clear()
+    //   setIsLoggedIn(false);
+    // };
+  
+
 return (
 
 <nav className="navbar" class="navbar navbar-expand " >
@@ -26,13 +32,13 @@ return (
       <ul className="navbar-nav mr-auto">
         
         <li className="nav-item">
-          <Link to="/login"className="nav-link">
+          <Link to="/login"className="nav-link text-light">
             {!isLoggedIn ? `Logout` : `Login`}
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to="/browse" className="nav-link">
+          <Link to="/browse" className="nav-link text-light">
             Browse
           </Link>
         </li>
@@ -44,7 +50,7 @@ return (
         </li> */}
        
         <li className="nav-item">
-          <Link to="/myaccount" className="nav-link">
+          <Link to="/myaccount" className="nav-link text-light">
             My Account
           </Link>
         </li>

@@ -28,7 +28,11 @@ useEffect(() => {
     
     const navigate = useNavigate();
 
+    // const handleControlledInputChange = (props) => {
 
+    //    searchTerms(props.target.value)
+
+    // }
 
     return (
         <>
@@ -38,6 +42,8 @@ useEffect(() => {
         <div className="bookSearch">
             <BookSearch key={bookId} />
         </div>
+
+
      
       <div className="browse-books">
           {books.filter(

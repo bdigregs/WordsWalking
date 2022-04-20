@@ -2,6 +2,7 @@ import React from "react"
 import { useContext } from "react";
 import { unstable_HistoryRouter, useNavigate } from "react-router-dom"
 import { BookContext } from "../../providers/BookProvider";
+import { GenreContext } from "../../providers/GenreProvider";
 import { UserContext } from "../../providers/UserProvider";
 import "./BookCard.css"
 import { format } from 'date-fns';
@@ -15,6 +16,8 @@ export const BookCard = ({ book }) => {
     // console.log(format(new Date(book.publishDate), 'yyyy/MM/dd'))
  
     const { buyBook, deleteBook, getAllBooks } = useContext(BookContext)
+
+    const {genres, getAllGenres } = useContext(GenreContext)
 
     const user = JSON.parse(localStorage.getItem("wordsWalkingUser"))
 
@@ -38,6 +41,8 @@ export const BookCard = ({ book }) => {
             <h4 className="bookAuthor">{book.author}</h4>
             <img className="bookImage" src={book.imageUrl} alt="book_image" />
             <p className="bookSynopsis">Synopsis: </p><p>{book.synopsis}</p>
+            <p className="bookGenre">Genre: </p> <p>{
+                book.genre.name}</p>
             <p className="bookPublisher">Publisher: </p><p>{book.publisher}</p>
             <p className="bookPublishDate">Publish Date: </p><p>{format(new Date(book.publishDate), 'yyyy/MM/dd')}</p>
             <p className="bookFirstEdition">First Edition: </p><p>{book.firstEdition === true ? `Yes`: `No`} </p>
