@@ -40,6 +40,7 @@ export const BookCard = ({ book }) => {
             <h3 className="bookTitle">{book.title}</h3>
             <h4 className="bookAuthor">{book.author}</h4>
             <img className="bookImage" src={book.imageUrl} alt="book_image" />
+            <p className="seller">Seller: </p><p>{book.user.username}</p>
             <p className="bookSynopsis">Synopsis: </p><p>{book.synopsis}</p>
             <p className="bookGenre">Genre: </p> <p>{
                 book.genre.name}</p>

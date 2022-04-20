@@ -31,11 +31,7 @@ return (
       </Link>
       <ul className="navbar-nav mr-auto">
         
-        <li className="nav-item">
-          <Link to="/login"className="nav-link text-light">
-            {!isLoggedIn ? `Logout` : `Login`}
-          </Link>
-        </li>
+      
 
         <li className="nav-item">
           <Link to="/browse" className="nav-link text-light">
@@ -55,6 +51,12 @@ return (
           </Link>
         </li>
     
+        <li className="nav-item">
+          <Link to="/login"className="nav-link text-light">
+            {!isLoggedIn ? `Logout` : `Login`}
+          </Link>
+        </li>
+        
       </ul>
     </nav>
 

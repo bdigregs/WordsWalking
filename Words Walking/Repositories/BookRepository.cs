@@ -24,7 +24,8 @@ namespace Words_Walking.Repositories
                             SELECT b.Id, b.genreId, b.buyerId, b.sellerId,
                                    b.title, b.author, b.synopsis, b.publisher,
                                    b.publishDate, b.firstEdition, b.price, b.imageUrl,
-                                   g.Id AS genreId, g.[name] AS 'genreName', s.Id AS sellerId
+                                   g.Id AS genreId, g.[name] AS 'genreName', s.Id AS sellerId,
+                                   s.Id AS sellerId, s.username AS 'username'
                             FROM Book b
                        LEFT JOIN Genre g ON b.genreId = g.Id
                        LEFT JOIN [User] s ON b.sellerId = s.Id
@@ -47,6 +48,11 @@ namespace Words_Walking.Repositories
                             },
                             buyerId = DbUtils.GetNullableInt(reader, "buyerId"),
                             sellerId = DbUtils.GetInt(reader, "sellerId"),
+                            user = new User
+                            {
+                                id = DbUtils.GetInt(reader, "sellerId"),
+                                username = DbUtils.GetString(reader,"username")
+                            },
                             title = DbUtils.GetString(reader, "title"),
                             author = DbUtils.GetString(reader, "author"),
                             synopsis = DbUtils.GetString(reader, "synopsis"),

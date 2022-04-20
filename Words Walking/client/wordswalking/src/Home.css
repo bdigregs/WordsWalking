@@ -5,12 +5,14 @@
     width: 50%;
     padding-top: 2%;
 
+
 }
 
 .welcome {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 20%;
+   text-align: center;
     padding-top: 2%;
+    font-weight: bold;
 }
