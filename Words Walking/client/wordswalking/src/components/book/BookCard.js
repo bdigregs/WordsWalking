@@ -1,6 +1,6 @@
 import React from "react"
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom"
+import { unstable_HistoryRouter, useNavigate } from "react-router-dom"
 import { BookContext } from "../../providers/BookProvider";
 import { UserContext } from "../../providers/UserProvider";
 import "./BookCard.css"
@@ -19,10 +19,10 @@ export const BookCard = ({ book }) => {
         // .then(() => navigate("myaccount"))
 }
 
-    // const handleClickDelete = () => {
-    //     deleteBook(book.id)
-    //     .then(getAllBooks)
-    // }
+    const handleClickDelete = () => {
+        deleteBook(book.id)
+        .then(getAllBooks)
+    }
     
     return (
 
@@ -31,19 +31,23 @@ export const BookCard = ({ book }) => {
             <h3 className="bookTitle">{book.title}</h3>
             <h4 className="bookAuthor">{book.author}</h4>
             <img className="bookImage" src={book.imageUrl} alt="book_image" />
-            <p className="bookSynopsis">Synopsis: {book.synopsis}</p>
-            <p className="bookPublisher">Publisher: {book.publisher}</p>
-            <p className="bookPublishDate">Publish Date: {book.publishDate}</p>
-            <p className="bookFirstEdition">First Edition: {book.firstEdition === true ? `Yes`: `No`} </p>
+            <p className="bookSynopsis">Synopsis: </p><p>{book.synopsis}</p>
+            <p className="bookPublisher">Publisher: </p><p>{book.publisher}</p>
+            <p className="bookPublishDate">Publish Date: </p><p>{book.publishDate}</p>
+            <p className="bookFirstEdition">First Edition: </p><p>{book.firstEdition === true ? `Yes`: `No`} </p>
             <p className="bookPrice">${book.price}</p>
            
 
-            {book.sellerId !== user.id ?
+            {book.sellerId !== user.id || book.buyerId === user.id ?
             <button id="buyBook" type="submit" onClick={handleClickBuy}>Buy Book</button> : "" }
-            {/* <button id="deleteBook"  onClick={event => {
+
+                {book.sellerId === user.id ?
+            <button id="editBook" onClick={() => navigate(`/book/edit/${book.id}`)}>Edit Book</button> : ""}
+            
+            <button id="deleteBook"  onClick={event => {
                 event.preventDefault()
                 handleClickDelete()
-            }}>Delete Book</button>   */}
+            }}>Delete Book</button>  
         </div>
         
         

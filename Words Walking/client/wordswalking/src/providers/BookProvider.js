@@ -3,7 +3,10 @@ import React, { useState } from "react";
 export const BookContext = React.createContext();
 
 export const BookProvider = (props) => {
+
     const [books, setBooks] = useState([]);
+
+    const [searchTerms, setSearchTerms ] = useState("")
 
 
     const getAllBooks = () => {
@@ -26,10 +29,10 @@ export const BookProvider = (props) => {
     };
 
     const deleteBook = bookId => {
-        return fetch(`http://localhost:44381/api/Book/${bookId}`, {
+        return fetch(`https://localhost:44381/api/Book/${bookId}`, {
             method: "DELETE"
         })
-
+            .then(getAllBooks)
     }
 
     const editBook = book => {
@@ -40,6 +43,11 @@ export const BookProvider = (props) => {
             },
             body: JSON.stringify(book)
         }).then(getAllBooks)
+    }
+
+    const getBookById = (id) => {
+        return fetch(`https://localhost:44381/api/Book/${id}`)
+        .then (res => res.json())
     }
 
 
@@ -57,7 +65,7 @@ export const BookProvider = (props) => {
     }
 
     return (
-        <BookContext.Provider value={{ books, getAllBooks, addBook, editBook, deleteBook, buyBook }}>
+        <BookContext.Provider value={{ books, getAllBooks, addBook, editBook, deleteBook, buyBook, searchTerms, setSearchTerms, getBookById }}>
             {props.children}
         </BookContext.Provider>
     )

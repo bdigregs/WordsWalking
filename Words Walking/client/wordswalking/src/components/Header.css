@@ -1,0 +1,34 @@
+/* .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-brand>img {
+    padding: 7px 14px;
+  } */
+
+  .navbar-brand
+{
+    position: relative;
+    background: url("https://lh3.googleusercontent.com/MXl10sp3zfFJh3pTSriyo26v-Cm6Cye9VzhzSXewlnodLs_uw57nUj4hJIRUX85fjxHLJi0nDMQxdU5j5_MV-BO8m_sDQgCPk7lTAp-3PxI3S8Iw01ubLGVf6wIbFnSA_OwZbwZWCw=w500-h315-p-k");
+    width: 200px;
+    height: 20vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.navbar {
+  background-color: rgba(3, 3, 31, 0.904);
+  position: fixed
+}
+
+.nav-link {
+  color: white;
+  font-weight: bold
+}
+
+.navbar.navbar-expand {
+  height: 20vh;
+  width: 100vw
+}

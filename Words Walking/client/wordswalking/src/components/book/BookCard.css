@@ -1,11 +1,32 @@
 .bookImage {
     /* float: left; */
-    width:  100px;
-    height: 100px;
+    width:  200px;
+    height: 200px;
     object-fit: cover;
     padding-bottom: 5%;
 }
 
 .bookCard {
     padding: 4%;
+}
+
+.bookSynopsis {
+    font-weight: bold;
+}
+
+.bookPrice {
+    font-weight: bold;
+}
+
+.bookPublisher {
+    font-weight: bold;
+}
+
+.bookPublishDate {
+    font-weight: bold;
+}
+
+.bookFirstEdition {
+    font-weight: bold;
+
 }

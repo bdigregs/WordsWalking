@@ -6,10 +6,12 @@ import { GenreContext } from "../../providers/GenreProvider";
 
 export const BookForm = () => {
 
-    const { books, addBook, getAllBooks } = useContext(BookContext)
+    const { books, addBook, getAllBooks, getBookById, editBook } = useContext(BookContext)
    const {getAllGenres, genres, setGenre } = useContext(GenreContext)
 
+   const {bookId} = useParams()
 
+const [ isLoading, setIsLoading ] = useState(true)
 
     const [book, setBook] = useState({
         genreId: 0,
@@ -60,10 +62,41 @@ export const BookForm = () => {
             book.sellerId = parseInt(userId)
           
             addBook(book)
-                .then(() => navigate("/"))
+                .then(() => navigate("/myaccount"))
 
+        } 
+            if (bookId) {
+                editBook({
+                    id: book.id,
+                    genreId: book.genreId,
+                    sellerId: book.sellerId,
+                    buyerId: book.buyerId,
+                    title: book.title,
+                    author: book.author,
+                    synopsis: book.synopsis,
+                    publisher: book.publisher,
+                    publishDate: book.publishDate,
+                    firstEdition: book.firstEdition,
+                    price: book.price,
+                    imageUrl: book.imageUrl
+                })
+                .then(() => navigate("/myaccount"))
+            }
         }
-    }
+    
+        useEffect(() => {
+            getAllBooks().then(() => {
+                if (bookId){
+                    getBookById(bookId)
+                    .then(book => {
+                        setBook(book)
+                        setIsLoading(false)
+                    })
+                } else {
+                    setIsLoading(false)
+                }
+            })
+        }, [])
 
 
     return (

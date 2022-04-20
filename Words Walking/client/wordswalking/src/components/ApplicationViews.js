@@ -33,6 +33,9 @@ export default function ApplicationViews() {
         <Route path="/book/add" element={<BookForm />} />
         <Route path="/browse" element={<BookList />} />
         <Route path="myaccount" element={<MyAccount />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/book/edit/:bookId/*" element={<BookForm />} />
+
 
 
       </Routes>
