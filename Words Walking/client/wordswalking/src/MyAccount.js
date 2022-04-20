@@ -35,10 +35,10 @@ books.sellerId = parseInt(userId)
       textAlign: "center",
     }}>Welcome to Words Walking</span> */}
 
-    <img src="https://www.canva.com/design/DAE9UmQG_UE/view" alt="WordsWalking" />
 
-<h1> View all of your listings</h1>
-<h2>
+
+<h1 className="viewListings"> View all of your listings</h1>
+<h2 className="booksToSell">
   <br />
     Books to sell
   </h2>
@@ -54,7 +54,7 @@ books.sellerId = parseInt(userId)
       </div>
       <br/><br />
 
-          <h2>Books you bought</h2>
+          <h2 className="booksYouBought">Books you bought</h2>
           <br />
       <div className="view-bought-books">
         {books.filter(b => b.buyerId === userId).map((singleBookInLoop) => (

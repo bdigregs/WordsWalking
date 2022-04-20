@@ -47,27 +47,42 @@ const [ isLoading, setIsLoading ] = useState(true)
 
     const handleClickSaveBook = (event) => {
         event.preventDefault()
+
+ //Get user Id from local storage
+        const user = JSON.parse(localStorage.getItem("wordsWalkingUser"))
+        console.log(user)
+
+        const userId = user.id
+        console.log(userId)
+
+        book.sellerId = parseInt(userId)
    
         if (book.genreId === 0 || book.title === "" || book.author === "" || book.price === 0 ) {
             window.alert("Please select a genre, title, and author. And don't forget to set a price!")
         }
         else {  
-            //Get user Id from local storage
-            const user = JSON.parse(localStorage.getItem("wordsWalkingUser"))
-            console.log(user)
+            setIsLoading(true);
+      
 
-            const userId = user.id
-            console.log(userId)
-
-            book.sellerId = parseInt(userId)
-          
-            addBook(book)
-                .then(() => navigate("/myaccount"))
-
-        } 
+       
             if (bookId) {
                 editBook({
                     id: book.id,
+                    genreId: book.genreId,
+                    sellerId: book.sellerId,
+                    buyerId: book.buyerId,
+                    title: book.title,
+                    author: book.author,
+                    synopsis: book.synopsis,
+                    publisher: book.publisher,
+                    publishDate: book.publishDate,
+                    firstEdition: book.firstEdition,
+                    price: book.price,
+                    imageUrl: book.imageUrl
+                }).then(() => navigate("/myaccount"))
+                
+            } else {
+                addBook({
                     genreId: book.genreId,
                     sellerId: book.sellerId,
                     buyerId: book.buyerId,
@@ -83,6 +98,7 @@ const [ isLoading, setIsLoading ] = useState(true)
                 .then(() => navigate("/myaccount"))
             }
         }
+    }
     
         useEffect(() => {
             getAllBooks().then(() => {

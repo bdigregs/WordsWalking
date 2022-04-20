@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../providers/UserProvider";
+import { useNavigate } from "react-router-dom";
 import "./Header.css"
 import {Navbar } from 'reactstrap';
 
@@ -11,6 +12,9 @@ const Header = () => {
   const user = JSON.parse(localStorage.getItem
     ("wordsWalkingUser"))
     const { isLoggedIn, logout } = useContext(UserContext);
+
+    let navigate = useNavigate();
+
 return (
 
 <nav className="navbar" class="navbar navbar-expand " >
@@ -22,7 +26,7 @@ return (
       <ul className="navbar-nav mr-auto">
         
         <li className="nav-item">
-          <Link to="/login" className="nav-link">
+          <Link to="/login"className="nav-link">
             {!isLoggedIn ? `Logout` : `Login`}
           </Link>
         </li>
