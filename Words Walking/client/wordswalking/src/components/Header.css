@@ -10,20 +10,24 @@
 {
     position: relative;
     background: url("https://lh3.googleusercontent.com/MXl10sp3zfFJh3pTSriyo26v-Cm6Cye9VzhzSXewlnodLs_uw57nUj4hJIRUX85fjxHLJi0nDMQxdU5j5_MV-BO8m_sDQgCPk7lTAp-3PxI3S8Iw01ubLGVf6wIbFnSA_OwZbwZWCw=w500-h315-p-k");
-    width: 200px;
+    width: 175px;
     height: 20vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     
 }
 
 .navbar {
   background-color: rgba(3, 3, 31, 0.904);
-  position: fixed
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
 }
 
 .nav-link {
+
   color: white;
   font-weight: bold;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -31,5 +35,13 @@
 
 .navbar.navbar-expand {
   height: 20vh;
-  width: 100vw
+  width: 100vw;
+  position: sticky;
+}
+
+.logout.text-light {
+  /* margin-left: 2%; */
+  color: white;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

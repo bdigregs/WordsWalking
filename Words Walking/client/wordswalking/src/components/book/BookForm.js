@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { BookContext } from "../../providers/BookProvider";
 import { GenreContext } from "../../providers/GenreProvider";
+import "./BookForm.css"
 
 export const BookForm = () => {
 

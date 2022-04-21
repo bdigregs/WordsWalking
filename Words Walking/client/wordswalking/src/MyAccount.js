@@ -26,7 +26,7 @@ books.sellerId = parseInt(userId)
       <>
       <div className="myAccountBackground">
 
-    <button onClick={() => {navigate("/book/add")}}>Add Book</button>  
+   
 
     {/* <span style={{
       position: "fixed",
@@ -45,6 +45,7 @@ books.sellerId = parseInt(userId)
     Books to sell
   </h2>
   <br /><br />
+  <button className="btn btn-primary" onClick={() => {navigate("/book/add")}}>Add Book</button>  
   <div className="view-your-listings">
           {books.filter(
               b => b.sellerId === userId

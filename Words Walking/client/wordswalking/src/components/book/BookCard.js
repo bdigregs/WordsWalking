@@ -56,10 +56,11 @@ export const BookCard = ({ book }) => {
                 {book.sellerId === user.id ?
             <button id="editBook" onClick={() => navigate(`/book/edit/${book.id}`)}>Edit Book</button> : ""}
             
+            {book.sellerId === user.id ? 
             <button id="deleteBook"  onClick={event => {
                 event.preventDefault()
                 handleClickDelete()
-            }}>Delete Book</button>  
+            }}>Delete Book</button> : "" }
         </div>
         
         

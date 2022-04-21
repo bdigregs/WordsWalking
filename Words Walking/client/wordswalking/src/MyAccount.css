@@ -1,3 +1,32 @@
 .myAccountBackground {
-    background-color: white;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk96gDr_3svVCKQgR3on9nRby5FmZlEQdOhQ&usqp=CAU");
+    background-color: rgba(37, 25, 13, 0.623); /* Tint color */
+    background-blend-mode: multiply;
+}
+
+.viewListings{
+    padding-top: 1%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.booksToSell {
+    color: white;
+    text-align: center;
+    padding: 1%;
+}
+
+.booksYouBought {
+    padding: 2%;
+
+    color: white;
+    text-align: center;
+}
+
+.btn.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }

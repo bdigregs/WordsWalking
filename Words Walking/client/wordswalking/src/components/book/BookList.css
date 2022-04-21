@@ -1,8 +1,32 @@
 .bookList{
-    background-color: white;
-    padding: 1%
+    display: grid;
+    /* background-color: white; */
+    background-image: url("https://s2982.pcdn.co/wp-content/uploads/2021/09/bookstore-shelves-hero-image.jpg.optimal.jpg");
+    padding: 1%;
+    background-color: rgba(37, 25, 13, 0.623); /* Tint color */
+    background-blend-mode: multiply;
 }
 
+.browseAllListings {
+    text-align: center;
+    color: white;
+}
+
+.browse{
+    color: white;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.input--wide {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 25em;
+    margin-top: 1%;
+    margin-bottom: 1%
+}
 /* #root{
     background-color: white;
 } */

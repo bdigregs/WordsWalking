@@ -14,14 +14,18 @@ import { BookSearch } from "./book/BookSearch";
 export default function ApplicationViews() {
   const { isLoggedIn, user, getCurrentUser } = useContext(UserContext);
 
+  const currentUser = JSON.parse(localStorage.getItem("wordsWalkingUser"))
+
+
   console.log("this is get current user in app views", getCurrentUser())
-  if (getCurrentUser() === undefined) {
+  
+  if (!currentUser) {
     return (
       <Routes>
-        <Route path = "/" element={<Home />} />
+        {/* <Route path = "/" element={<Login />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route path="*" element={<Navigate to="/login" />} /> */}
+        <Route path="*" element={<Navigate to="/login" />} />
 
       </Routes>
     );

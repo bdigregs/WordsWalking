@@ -40,7 +40,8 @@ export const UserProvider = (props) => {
 
   const logout = () => {
     localStorage.clear();
-    setIsLoggedIn(false);
+    setIsLoggedIn(false)
+    // .then(navigate("/login"))
   };
 
   return (

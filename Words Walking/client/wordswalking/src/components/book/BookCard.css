@@ -1,41 +1,109 @@
 .bookImage {
-    /* float: left; */
-    width:  200px;
-    height: 200px;
-    object-fit: cover;
-    padding-bottom: 5%;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    width: 28vw;
+    height: 60vh;
+    margin-bottom: 5%;
+    border-style: solid;
+    border-color:rgb(94, 24, 24);
+    border-width: 1em
+   
+    
 }
 
 .bookCard {
-    padding: 4%;
-    background-color: white;
+   
+        display: flex;
+        flex-flow: column wrap;
+         justify-content: center;
+         border-style: solid;
+         padding: 4%;
+         /* margin: 2%; */
+         width: 100%;
+         box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
+         background-color: rgb(255, 252, 250);
+         background-image: url("https://www.patternpictures.com/wp-content/uploads/Kristal-subtle-glass-white-background-pattern-patternpictures-0220-1500x1000.png");
+         border-radius: 25px;
 }
 
+#buyBook{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    padding: 1%;
+    width: 15vw;
+    background-color: green;
+    color: white;
+    margin: 1%
+
+}
+
+#deleteBook{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    padding: 1%;
+    width: 15vw;
+    background-color: red;
+    color: white;
+    margin: 1%
+
+}
+
+#editBook{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    padding: 1%;
+    width: 15vw;
+    background-color: rgba(0, 102, 255, 0.836);
+    color: white;
+    margin: 1%
+}
+
+.bookTitle{
+font-weight: bold;
+display: flex;
+
+}
+
+.bookAuthor{
+    display: flex;
+
+}
 .bookSynopsis {
+    display: flex;
     font-weight: bold;
 }
 
 .bookPrice {
+    display: flex;
     font-weight: bold;
 }
 
 .bookPublisher {
+    display: flex;
     font-weight: bold;
 }
 
 .bookPublishDate {
+    display: flex;
     font-weight: bold;
 }
 
 .bookFirstEdition {
+    display: flex;
     font-weight: bold;
 
 }
 
 .bookGenre {
+    display: flex;
     font-weight: bold;
 }
 
 .seller {
+    display: flex;
     font-weight: bold;
 }

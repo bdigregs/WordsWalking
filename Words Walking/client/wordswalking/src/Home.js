@@ -18,13 +18,14 @@ export default function Home() {
 
 const user = JSON.parse(localStorage.getItem("wordsWalkingUser"))
 
-const userId = user.id
-console.log(userId)
+// const userId = user.id
+// console.log(userId)
 
-books.sellerId = parseInt(userId)
+// books.sellerId = parseInt(userId)
 
   return (
       <>
+      <div className="homeBackground">
     {/* <button onClick={() => {navigate("/book/add")}}>Add Book</button>   */}
 
     {/* <span style={{
@@ -67,7 +68,7 @@ books.sellerId = parseInt(userId)
         ))}
       </div> */}
 
-
+</div>
 </>
   );
 }

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 import "./Header.css"
-import {Navbar } from 'reactstrap';
+import {Navbar, Button } from 'reactstrap';
 
 
 
@@ -52,9 +52,9 @@ return (
         </li>
     
         <li className="nav-item">
-          <Link to="/login"className="nav-link text-light">
-            {!isLoggedIn ? `Logout` : `Login`}
-          </Link>
+          
+            {!isLoggedIn ? <Button color="" className="logout text-light" onClick={logout}>Logout</Button> : <Link to="/login" className="nav-link text-light">Login</Link>}
+          
         </li>
         
       </ul>

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../providers/UserProvider";
+import "./Auth.css"
 
 export const Register = () => {
   // Create state variables for each form field

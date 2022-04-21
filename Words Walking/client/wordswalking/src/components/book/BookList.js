@@ -40,6 +40,7 @@ useEffect(() => {
         <div className="bookList">
         
       <h1 className="browseAllListings">Browse all listings</h1>
+      <p className="browse">Look through the catalog to see which books your community has put up for sale.</p>
 
         <div className="bookSearch">
             <BookSearch key={bookId} />
