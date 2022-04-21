@@ -50,8 +50,8 @@ export const BookCard = ({ book }) => {
             <p className="bookPrice">${book.price}</p>
            
 
-            {book.sellerId !== user.id || book.buyerId === user.id ?
-            <button id="buyBook" type="submit" onClick={handleClickBuy}>Buy Book</button> : "" }
+            { book.sellerId === user.id || book.buyerId === user.id ?
+            "" : <button id="buyBook" type="submit" onClick={handleClickBuy}>Buy Book</button> }
 
                 {book.sellerId === user.id ?
             <button id="editBook" onClick={() => navigate(`/book/edit/${book.id}`)}>Edit Book</button> : ""}

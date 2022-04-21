@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { BookContext } from "./providers/BookProvider";
 import { useEffect } from "react";
 import { BookCard } from "./components/book/BookCard";
-
+import "./MyAccount.css"
 
 export default function MyAccount() {
 
@@ -24,6 +24,8 @@ books.sellerId = parseInt(userId)
 
   return (
       <>
+      <div className="myAccountBackground">
+
     <button onClick={() => {navigate("/book/add")}}>Add Book</button>  
 
     {/* <span style={{
@@ -61,7 +63,7 @@ books.sellerId = parseInt(userId)
           <BookCard key={singleBookInLoop.id} book={singleBookInLoop} />
         ))}
       </div>
-
+      </div>
 
 </>
   );

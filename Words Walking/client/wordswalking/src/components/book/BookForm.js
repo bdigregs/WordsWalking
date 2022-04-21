@@ -117,6 +117,7 @@ const [ isLoading, setIsLoading ] = useState(true)
 
     return (
         <>
+        <div className="bookFormBackground">
         <form className="bookForm">
             <h2 className="bookForm_title">New Book</h2>
             <fieldset>
@@ -191,7 +192,7 @@ const [ isLoading, setIsLoading ] = useState(true)
 
                 <button className="btn btn-primary" type="submit" onClick={handleClickSaveBook}>Save Book </button>
         </form>
-        
+        </div>
         </>
     )
 

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { BookCard } from "./BookCard";
 import { BookSearch } from "./BookSearch";
+import "./BookList.css"
 
 export const BookList = () => {
     const { books, getAllBooks, searchTerms } = useContext(BookContext)
@@ -36,8 +37,9 @@ useEffect(() => {
 
     return (
         <>
+        <div className="bookList">
         
-      <h1>Browse all listings</h1>
+      <h1 className="browseAllListings">Browse all listings</h1>
 
         <div className="bookSearch">
             <BookSearch key={bookId} />
@@ -46,7 +48,7 @@ useEffect(() => {
 
      
       <div className="browse-books">
-          {books.filter(
+          {filteredBooks.filter(
               b => b.buyerId === null 
           ).map((singleBookInLoop) => (
               <BookCard key={singleBookInLoop.id} book={singleBookInLoop} />
@@ -54,7 +56,7 @@ useEffect(() => {
             
           }
       </div>
-        
+      </div>
         
         </>
 

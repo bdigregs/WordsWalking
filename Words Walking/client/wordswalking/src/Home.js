@@ -36,9 +36,9 @@ books.sellerId = parseInt(userId)
       textAlign: "center",
     }}>Welcome to Words Walking, {user.firstName}</span> */}
 
-    <div className="welcome">Welcome to Words Walking, {user.firstName}</div>
+    <h1 className="welcome">Welcome to Words Walking, {user.firstName}!</h1>
 
-<img className="logo" src="https://lh3.googleusercontent.com/MXl10sp3zfFJh3pTSriyo26v-Cm6Cye9VzhzSXewlnodLs_uw57nUj4hJIRUX85fjxHLJi0nDMQxdU5j5_MV-BO8m_sDQgCPk7lTAp-3PxI3S8Iw01ubLGVf6wIbFnSA_OwZbwZWCw=w500-h315-p-k" /> 
+{/* <img className="logo" src="https://lh3.googleusercontent.com/MXl10sp3zfFJh3pTSriyo26v-Cm6Cye9VzhzSXewlnodLs_uw57nUj4hJIRUX85fjxHLJi0nDMQxdU5j5_MV-BO8m_sDQgCPk7lTAp-3PxI3S8Iw01ubLGVf6wIbFnSA_OwZbwZWCw=w500-h315-p-k" />  */}
 {/* 
     <img src="https://www.canva.com/design/DAE9UmQG_UE/view" alt="WordsWalking" />
 
