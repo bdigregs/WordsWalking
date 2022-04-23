@@ -77,7 +77,7 @@ function topFunction() {
             
           }
 
-<button onClick={topFunction} id="myBtn" title="Go to top">Top</button>
+<button onClick={topFunction} id="myBtn" title="Go to top">Scroll to top</button>
       </div>
       </div>
         
