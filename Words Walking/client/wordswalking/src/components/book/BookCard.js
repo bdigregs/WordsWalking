@@ -6,6 +6,7 @@ import { GenreContext } from "../../providers/GenreProvider";
 import { UserContext } from "../../providers/UserProvider";
 import "./BookCard.css"
 import { format } from 'date-fns';
+import { Row, Col, Card } from "react-bootstrap";
 
 
 
@@ -37,6 +38,7 @@ export const BookCard = ({ book }) => {
 
         <>
         <div className="bookCard">
+            
             <h3 className="bookTitle">{book.title}</h3>
             <h4 className="bookAuthor">{book.author}</h4>
             <img className="bookImage" src={book.imageUrl} alt="book_image" />
@@ -45,7 +47,7 @@ export const BookCard = ({ book }) => {
             <p className="bookGenre">Genre: </p> <p>{
                 book.genre.name}</p>
             <p className="bookPublisher">Publisher: </p><p>{book.publisher}</p>
-            <p className="bookPublishDate">Publish Date: </p><p>{format(new Date(book.publishDate), 'yyyy/MM/dd')}</p>
+            <p className="bookPublishDate">Year Published: </p><p>{format(new Date(book.publishDate), 'yyyy')}</p>
             <p className="bookFirstEdition">First Edition: </p><p>{book.firstEdition === true ? `Yes`: `No`} </p>
             <p className="bookPrice">${book.price}</p>
            
