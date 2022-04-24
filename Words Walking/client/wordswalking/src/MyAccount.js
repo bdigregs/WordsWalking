@@ -22,6 +22,25 @@ console.log(userId)
 
 books.sellerId = parseInt(userId)
 
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
   return (
       <>
       <div className="myAccountBackground">
@@ -39,7 +58,8 @@ books.sellerId = parseInt(userId)
 
 
 
-<h1 className="viewListings"> View all of your listings</h1>
+<h1 className="viewListings"> Your books to sell and your books bought!</h1>
+<a href="#booksYouBought">Books you bought</a>
 <h2 className="booksToSell">
   <br />
     Books to sell
@@ -64,6 +84,8 @@ books.sellerId = parseInt(userId)
           <BookCard key={singleBookInLoop.id} book={singleBookInLoop} />
         ))}
       </div>
+
+      <button onClick={topFunction} id="myBtn" title="Go to top">Scroll to top</button>
       </div>
 
 </>

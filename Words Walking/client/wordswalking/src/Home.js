@@ -41,6 +41,8 @@ const user = JSON.parse(localStorage.getItem("wordsWalkingUser"))
 
     <p className="welcomeParagraph">In our domain, you can search, sell, and buy books within your community! If you have used books that need a happy home, look no further.</p>
 
+    <p className="alibrisLink">Need a reference for prices? Check out Alibris <a href="https://www.alibris.com/">here.</a></p>
+
 {/* <img className="logo" src="https://lh3.googleusercontent.com/MXl10sp3zfFJh3pTSriyo26v-Cm6Cye9VzhzSXewlnodLs_uw57nUj4hJIRUX85fjxHLJi0nDMQxdU5j5_MV-BO8m_sDQgCPk7lTAp-3PxI3S8Iw01ubLGVf6wIbFnSA_OwZbwZWCw=w500-h315-p-k" />  */}
 {/* 
     <img src="https://www.canva.com/design/DAE9UmQG_UE/view" alt="WordsWalking" />

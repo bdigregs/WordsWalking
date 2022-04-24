@@ -44,3 +44,13 @@
 body {
     background-image: url("https://s2982.pcdn.co/wp-content/uploads/2021/09/bookstore-shelves-hero-image.jpg.optimal.jpg");
 }
+
+.alibrisLink{
+    display: block;
+    margin-left: 10em;
+    margin-right: 10em;
+    padding: 1%;
+   text-align: center;
+    font-style: italic;
+    color: white;
+}
