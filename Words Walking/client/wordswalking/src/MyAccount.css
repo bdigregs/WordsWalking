@@ -18,7 +18,15 @@
     /* padding: 1%; */
 }
 
-.booksYouBought {
+.booksBought {
+    display: flex;
+    justify-content: center;
+    color: yellow;
+    margin-top: 1%;
+    font-weight: bold;
+}
+
+#booksYouBought {
     padding: 2%;
 
     color: white;

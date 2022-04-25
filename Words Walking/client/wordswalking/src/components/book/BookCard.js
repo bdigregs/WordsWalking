@@ -38,18 +38,25 @@ export const BookCard = ({ book }) => {
 
         <>
         <div className="bookCard">
-            
+            <div className="bookHeading">
             <h3 className="bookTitle">{book.title}</h3>
             <h4 className="bookAuthor">{book.author}</h4>
             <img className="bookImage" src={book.imageUrl} alt="book_image" />
-            <p className="seller">Seller: </p><p>{book.user.username}</p>
-            <p className="bookSynopsis">Synopsis: </p><p>{book.synopsis}</p>
-            <p className="bookGenre">Genre: </p> <p>{
+            </div>
+            <div className="bookInfo">
+            <p className="seller">Seller: </p><p className="description">&nbsp;&nbsp;
+{book.user.username}</p>
+            <p className="bookSynopsis">Synopsis: </p><p>&nbsp;&nbsp;
+{book.synopsis}</p>
+            <p className="bookGenre">Genre: </p> <p>&nbsp;&nbsp;
+{
                 book.genre.name}</p>
-            <p className="bookPublisher">Publisher: </p><p>{book.publisher}</p>
-            <p className="bookPublishDate">Year Published: </p><p>{format(new Date(book.publishDate), 'yyyy')}</p>
-            <p className="bookFirstEdition">First Edition: </p><p>{book.firstEdition === true ? `Yes`: `No`} </p>
-            <p className="bookPrice">${book.price}</p>
+            <p className="bookPublisher">Publisher: </p><p>&nbsp;&nbsp;
+{book.publisher}</p>
+            <p className="bookPublishDate">Year Published: </p><p>&nbsp;&nbsp;
+{format(new Date(book.publishDate), 'yyyy')}</p>
+            <p className="bookFirstEdition">First Edition: </p><p>&nbsp;&nbsp;{book.firstEdition === true ? `Yes`: `No`} </p>
+            <h2 className="bookPrice">${book.price}</h2>
            
 
             { book.sellerId === user.id || book.buyerId === user.id ?
@@ -63,6 +70,7 @@ export const BookCard = ({ book }) => {
                 event.preventDefault()
                 handleClickDelete()
             }}>Delete Book</button> : "" }
+            </div>
         </div>
         
         

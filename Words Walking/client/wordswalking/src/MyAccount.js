@@ -59,7 +59,7 @@ function topFunction() {
 
 
 <h1 className="viewListings"> Your books to sell and your books bought!</h1>
-<a href="#booksYouBought">Books you bought</a>
+<a className="booksBought" href="#booksYouBought">Go To Books You Bought</a>
 <h2 className="booksToSell">
   <br />
     Books to sell
@@ -77,7 +77,7 @@ function topFunction() {
       </div>
       <br/><br />
 
-          <h2 className="booksYouBought">Books you bought</h2>
+          <h2 id="booksYouBought">Books you bought</h2>
           <br />
       <div className="view-bought-books">
         {books.filter(b => b.buyerId === userId).map((singleBookInLoop) => (

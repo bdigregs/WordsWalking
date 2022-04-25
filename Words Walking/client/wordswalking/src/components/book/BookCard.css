@@ -15,8 +15,8 @@
 .bookCard {
    
         display: flex;
-        flex-flow: column wrap;
-         justify-content: center;
+        /* flex-flow: column; */
+         justify-content: left;
          border-style: solid;
          padding: 4%;
          /* margin: 2%; */
@@ -27,15 +27,26 @@
          border-radius: 25px;
 }
 
+.bookHeading {
+    width: 500px;
+    margin-left: 3%;
+}
+
+.bookInfo {
+    width: 700px;
+    padding: 2%;
+    /* justify-content: right; */
+}
+
 #buyBook{
     display: flex;
     justify-self: center;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 1%;
     width: 15vw;
     background-color: green;
     color: white;
-    margin: 1%
+    margin-top: 8%
 
 }
 
@@ -75,35 +86,52 @@ display: flex;
 .bookSynopsis {
     display: flex;
     font-weight: bold;
+    display:inline;
+float:left;
 }
+
+/* p { margin:0 } */
+
 
 .bookPrice {
     display: flex;
     font-weight: bold;
+    margin-left: 12%;
+    margin-top: 8%
 }
 
 .bookPublisher {
     display: flex;
     font-weight: bold;
+    display:inline;
+float:left;
 }
 
 .bookPublishDate {
     display: flex;
     font-weight: bold;
+    display:inline;
+float:left;
 }
 
 .bookFirstEdition {
     display: flex;
     font-weight: bold;
+    display:inline;
+float:left;
 
 }
 
 .bookGenre {
     display: flex;
     font-weight: bold;
+    display:inline;
+float:left;
 }
 
 .seller {
     display: flex;
     font-weight: bold;
+    display:inline;
+float:left;
 }

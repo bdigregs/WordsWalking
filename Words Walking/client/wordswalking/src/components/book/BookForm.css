@@ -1,3 +1,8 @@
 .bookFormBackground {
     background-color: white;
 }
+
+.btn.btn-primary {
+    display: flex;
+    justify-content: left;
+}

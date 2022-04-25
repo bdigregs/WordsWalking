@@ -6,6 +6,7 @@
     padding: 1%;
     background-color: rgba(37, 25, 13, 0.623); /* Tint color */
     background-blend-mode: multiply;
+    width: 100vw;
 }
 
 .browseAllListings {
