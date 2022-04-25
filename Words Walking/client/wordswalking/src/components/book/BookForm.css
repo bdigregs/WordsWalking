@@ -2,7 +2,8 @@
     background-color: white;
 }
 
-.btn.btn-primary {
+#btnCss {
     display: flex;
     justify-content: left;
 }
+

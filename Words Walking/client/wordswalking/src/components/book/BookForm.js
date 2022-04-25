@@ -198,7 +198,7 @@ const [ isLoading, setIsLoading ] = useState(true)
                 </div>
                 </fieldset>
 
-                <button className="btn btn-primary" type="submit" onClick={handleClickSaveBook}>Save Book </button>
+                <button id="btnCss" className="btn btn-info" type="submit" onClick={handleClickSaveBook}>Save Book </button>
 
                 
                 <button className="btn btn-danger" type="submit" onClick={handleClickCancel}>Cancel </button>
